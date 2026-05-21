@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+
+<body>
+
+<nav class="ui inverted menu">
+  <a class="item" href="index.html">Home</a>
+  <a class="item" href="data.html">Movies</a>
+  <a class="item" href="about.html">About</a>
+</nav>
+
+<div class="container">
+
+  <h1>About This Website</h1>
+
+  <p>
+    This website was created for a web development assignment. It is a simple movie review and rating platform where users can add movies, leave comments, and search for their favorite films.
+  </p>
+
+  <h2>Leave a Comment</h2>
+
+  <form id="commentForm">
+
+    <input type="text" id="username"
+      placeholder="Your Name" required>
+
+    <textarea id="commentText"
+      placeholder="Your Comment" required>
+    </textarea>
+
+    <button class="ui blue button" type="submit">
+      Add Comment
+    </button>
+
+  </form>
+
+  <div id="commentsContainer"></div>
+
+</div>
+
+<!-- Handlebars -->
+<script id="commentTemplate" type="text/x-handlebars-template">
+
+  {{#each comments}}
+
+  <div class="ui segment">
+
+    <h3>{{name}}</h3>
+
+    <p>{{comment}}</p>
+
+    <small>{{date}}</small>
+
+  </div>
+
+  {{/each}}
+
+</script>
+
+<script src="about.js"></script>
+
+</body>
+</html>
